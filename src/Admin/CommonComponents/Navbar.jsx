@@ -44,13 +44,12 @@ const StyledBox = styled(Box)({
   borderRadius: "30px",
   cursor: "pointer",
 });
-//Usermenu component
 const UserMenu = ({ anchorEl, setAnchorEl }) => {
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
-    setAnchorEl(null); // Close the menu
-    navigate("/profilemain"); // Navigate to the Profile page
+    setAnchorEl(null); 
+    navigate("/profilemain"); 
   };
   return (
     <Menu
@@ -67,19 +66,17 @@ const UserMenu = ({ anchorEl, setAnchorEl }) => {
     </Menu>
   );
 };
-//Navbar component
 const Navbar = ({ toggleSidebar, unresolvedCount }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const location = useLocation(); // Get the current route
+  const location = useLocation(); 
 
   return (
     <StyledAppbar elevation={0}>
       <StyledToolbar>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          {/* Disable Sidebar Toggle in Mobile View */}
           {!isMobile && (
             <MenuIcon
               onClick={toggleSidebar}

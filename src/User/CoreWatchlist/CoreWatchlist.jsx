@@ -17,7 +17,6 @@ import {
 import { Add, Search } from "@mui/icons-material";
 
 
-// Simulated API Fetch (mock data)
 const fetchDummyData = async () => {
   return new Promise((resolve) =>
     setTimeout(() => {
@@ -169,13 +168,12 @@ const fetchDummyData = async () => {
 
 const trendColors = { strong: "green", medium: "blue", weak: "red" };
 
-// Core Watchlist Table
 
 const CoreWatchlistTable = () => {
   const [data, setData] = useState({ nodes: [] });
   const [openUser, setOpenUser] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const isMobile = useMediaQuery("(max-width: 600px)"); // Check for mobile screen
+  const isMobile = useMediaQuery("(max-width: 600px)"); 
 
   const theme = useTheme([
     getTheme(),
@@ -250,14 +248,12 @@ const CoreWatchlistTable = () => {
     fetchDummyData().then((response) => setData({ nodes: response }));
   }, []);
 
-  // Generate previous 24 months dynamically, with the most recent month first
   const months = Array.from({ length: 24 }, (_, index) => {
     const date = new Date();
-    date.setMonth(date.getMonth() - index); // Subtract months to get previous months
+    date.setMonth(date.getMonth() - index); 
     return date.toLocaleString("default", { month: "short", year: "numeric" });
   });
 
-  // Highlight matching text in the Company column
   const highlightText = (text, highlight) => {
     if (!highlight.trim()) return text;
 
@@ -273,7 +269,6 @@ const CoreWatchlistTable = () => {
     );
   };
 
-  // Filter and sort data based on search query
   const filteredData = {
     nodes: data.nodes
       .filter((item) =>
@@ -286,9 +281,9 @@ const CoreWatchlistTable = () => {
         const bMatch = b.company
           .toLowerCase()
           .includes(searchQuery.toLowerCase());
-        if (aMatch && !bMatch) return -1; // a comes first
-        if (!aMatch && bMatch) return 1; // b comes first
-        return 0; // no change in order
+        if (aMatch && !bMatch) return -1; 
+        if (!aMatch && bMatch) return 1; 
+        return 0; 
       }),
   };
 
@@ -377,7 +372,6 @@ const CoreWatchlistTable = () => {
             </Typography>
 
             <Badge
-              // badgeContent={3}
               badgeContent={filteredData.nodes.length}
               sx={{
                 ml: { xs: 0, sm: 0, md: 1 },
@@ -426,17 +420,16 @@ const CoreWatchlistTable = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Trend Indicator Section */}
       <Box
         sx={{
           mt: 2,
           mb: 2,
-          width: "50%", // Full width for responsiveness
+          width: "50%", 
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" }, // Column on small screens, row on larger screens
-          alignItems: { xs: "flex-start", sm: "center" }, // Align items to the start on small screens
+          flexDirection: { xs: "column", sm: "row" }, 
+          alignItems: { xs: "flex-start", sm: "center" }, 
           justifyContent: "space-evenly",
-          gap: { xs: 1, sm: 2 }, // Add gap for better spacing
+          gap: { xs: 1, sm: 2 }, 
         }}
       >
         <Typography
@@ -449,7 +442,6 @@ const CoreWatchlistTable = () => {
           <b>Trend Indicator:</b>
         </Typography>
 
-        {/* Strong Trend */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Typography
             variant="p"
@@ -462,12 +454,11 @@ const CoreWatchlistTable = () => {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              backgroundColor: "green", // Strong trend color
+              backgroundColor: "green", 
             }}
           />
         </Box>
 
-        {/* Medium Trend */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Typography
             variant="p"
@@ -480,12 +471,11 @@ const CoreWatchlistTable = () => {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              backgroundColor: "blue", // Medium trend color
+              backgroundColor: "blue", 
             }}
           />
         </Box>
 
-        {/* Weak Trend */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Typography
             variant="p"
@@ -498,24 +488,23 @@ const CoreWatchlistTable = () => {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              backgroundColor: "red", // Weak trend color
+              backgroundColor: "red", 
             }}
           />
         </Box>
       </Box>
 
-      {/* Table with Fixed Height and Vertical Scrolling */}
       <Box
         sx={{
           width: "100%",
-          overflowX: "auto", // Enable horizontal scrolling
-          height: "calc(9 * 50px)", // Fixed height for 5 rows
-          overflowY: "auto", // Enable vertical scrolling
+          overflowX: "auto", 
+          height: "calc(9 * 50px)",
+          overflowY: "auto", 
         }}
       >
         <CompactTable
           columns={COLUMNS}
-          data={filteredData} // Use filtered and sorted data
+          data={filteredData} 
           theme={theme}
           layout={{ custom: true, horizontalScroll: true }}
         />

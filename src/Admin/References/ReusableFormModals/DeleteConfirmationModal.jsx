@@ -34,7 +34,6 @@ const DeleteConfirmationModal = React.memo(
             alignItems: "center",
           }}
         >
-          {/* Close Button in the top-right corner */}
           <IconButton
             sx={{ position: "absolute", top: 17, right: 8 }}
             onClick={handleClose}
@@ -72,7 +71,6 @@ const DeleteConfirmationModal = React.memo(
             }}
           />
 
-          {/* Buttons Section */}
           <Box
             display="flex"
             flexDirection={isSmallScreen ? "column" : "row"}

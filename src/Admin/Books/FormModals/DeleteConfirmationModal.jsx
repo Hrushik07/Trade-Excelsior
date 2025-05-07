@@ -39,7 +39,6 @@ function DeleteConfirmationModal({
           alignItems: "center",
         }}
       >
-        {/* Close Button in the top-right corner */}
         <IconButton
           sx={{ position: "absolute", top: 17, right: 8 }}
           onClick={handleClose}
@@ -76,7 +75,6 @@ function DeleteConfirmationModal({
             mb: 3,
           }}
         />
-        {/* Buttons Section */}
         <Box
           display="flex"
           flexDirection={isSmallScreen ? "column" : "row"}

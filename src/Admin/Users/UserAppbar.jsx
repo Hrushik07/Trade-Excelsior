@@ -36,7 +36,6 @@ const AppBarComponent = ({ searchQuery, setSearchQuery, userCount }) => {
             alignItems: { xs: "flex-start", sm: "center" },
           }}
         >
-          {/* User List Title with User Count */}
           <Box
             sx={{
               display: "flex",
@@ -68,7 +67,6 @@ const AppBarComponent = ({ searchQuery, setSearchQuery, userCount }) => {
             />
           </Box>
 
-          {/* Search Bar & Add User Button */}
           <Box
             sx={{
               display: "flex",
@@ -105,7 +103,7 @@ const AppBarComponent = ({ searchQuery, setSearchQuery, userCount }) => {
               sx={{
                 fontSize: { xs: "0.7rem", sm: "1rem" },
                 mt: { xs: 1, sm: 0 },
-                width: { xs: "100%", sm: "auto" }, // Full width on mobile
+                width: { xs: "100%", sm: "auto" }, 
               }}
               onClick={() => setOpenUser(true)}
             >
@@ -122,7 +120,6 @@ const AppBarComponent = ({ searchQuery, setSearchQuery, userCount }) => {
         </Toolbar>
       </AppBar>
 
-      {/* Buttons for Active and Inactive License */}
       <Box
         sx={{
           display: "flex",
@@ -153,12 +150,12 @@ const AppBarComponent = ({ searchQuery, setSearchQuery, userCount }) => {
         <Button
           variant="contained"
           sx={{
-            px: 3, // Reduce padding to make the button smaller
-            py: 1, // Reduce padding to make the button smaller
-            backgroundColor: "#ffcccb", // Light red background
-            color: "red", // Red font color
+            px: 3, 
+            py: 1, 
+            backgroundColor: "#ffcccb", 
+            color: "red", 
             "&:hover": {
-              backgroundColor: "#ffcccb", // Keep the same color on hover
+              backgroundColor: "#ffcccb", 
             },
             width: { xs: "100%", sm: "auto" },
           }}

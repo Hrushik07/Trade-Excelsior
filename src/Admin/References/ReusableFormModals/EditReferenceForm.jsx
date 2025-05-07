@@ -128,7 +128,6 @@ const EditReferenceForm = ({ open, onClose, reference, handleUpdate }) => {
                   pr: { xs: 2, sm: 5 },
                 }}
               >
-                {/* File Upload Input */}
                 <input
                   type="file"
                   ref={fileInputRef}
@@ -154,7 +153,7 @@ const EditReferenceForm = ({ open, onClose, reference, handleUpdate }) => {
                     src={selectedImage}
                     alt="Selected"
                     onError={(e) => {
-                      e.target.style.display = "none"; // Hide broken image
+                      e.target.style.display = "none"; 
                     }}
                     style={{
                       width: "100px",

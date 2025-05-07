@@ -72,7 +72,7 @@ export default function Profilemain() {
     onSubmit: (values) => {
       console.log("Form Submitted ✅", values);
       alert("Profile updated successfully!");
-      setIsEditing(false); // Disable editing after saving
+      setIsEditing(false); 
 
     },
   })
@@ -92,9 +92,6 @@ export default function Profilemain() {
           </Toolbar>
         </AppBar>
       </Box>
-      {/* end of navbar */}
-
-      {/* Responsive Layout */}
       <Box sx={{ display: "flex", padding: 3, justifyContent: "center", backgroundColor: "#E6E6FF" }}>
         <form onSubmit={formik.handleSubmit}>
           <Grid

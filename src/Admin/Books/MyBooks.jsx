@@ -88,7 +88,6 @@ function MyBooks() {
   const handleAddOpen = () => setOpenAddForm(true);
   const handleAddClose = () => setOpenAddForm(false);
 
-  // edit form for book for update book
   const handleSave = (updatedBook) => {
     setBooks((prevBooks) =>
       prevBooks.map((book) => (book.id === updatedBook.id ? updatedBook : book))
@@ -96,24 +95,20 @@ function MyBooks() {
     handleEditClose();
   };
 
-  // Define addBook function
   const addBook = (newBook) => {
     setBooks((prevBooks) => [...prevBooks, newBook]);
   };
 
-  // Open delete confirmation modal with the selected book
   const handleOpenDeleteModal = (book) => {
     setBookToDelete(book);
     setOpenModal(true);
   };
 
-  // Close delete modal
   const handleClose = () => {
     setOpenModal(false);
     setBookToDelete(null);
   };
 
-  // Delete book function
   const handleDeleteBook = () => {
     if (bookToDelete) {
       setBooks((prevBooks) =>
@@ -184,16 +179,16 @@ function MyBooks() {
           </Box>
 
           <Button
-                      variant="contained"
-                      onClick={handleAddOpen}
-                      sx={{
-                        fontSize: { xs: "0.7rem", sm: "1rem" },
-                        mt: { xs: 1, sm: 0 },
-                        width: { xs: "100%", sm: "auto" }, // Full width on mobile
-                      }}
-                    >
-                      + Add Book
-                    </Button>
+            variant="contained"
+            onClick={handleAddOpen}
+            sx={{
+              fontSize: { xs: "0.7rem", sm: "1rem" },
+              mt: { xs: 1, sm: 0 },
+              width: { xs: "100%", sm: "auto" },
+            }}
+          >
+            + Add Book
+          </Button>
         </Toolbar>
       </AppBar>
 
@@ -230,7 +225,6 @@ function MyBooks() {
                   {book.bookTagline}
                 </Typography>
 
-                {/* Image after title for mobile  */}
                 {isMobile && (
                   <CardMedia
                     component="img"
@@ -247,7 +241,6 @@ function MyBooks() {
                   />
                 )}
 
-                {/* Image after title for tablet */}
                 {isTablet && (
                   <CardMedia
                     component="img"
@@ -274,7 +267,6 @@ function MyBooks() {
                     fontWeight: "bold",
                   }}
                 >
-                  {/* Price Action */}
                   {book.bookName}
                 </Typography>
                 <Typography
@@ -296,7 +288,6 @@ function MyBooks() {
                   </Typography>
                 </Typography>
 
-                {/* Buttons */}
                 <Box sx={{ mt: 2 }}>
                   <Button
                     variant="contained"
@@ -353,7 +344,6 @@ function MyBooks() {
                 </Box>
               </CardContent>
 
-              {/* Image on right for desktop */}
               {!isMobile && !isTablet && (
                 <CardMedia
                   component="img"

@@ -15,7 +15,6 @@ const DeleteConfirmationDialog = ({ open, onClose, onConfirm }) => {
         },
       }}
     >
-      {/* Title with Close Button */}
       <DialogTitle sx={{ textAlign: "center", fontWeight: "bold", fontSize: "18px", position: "relative", pt: 0 }}>
         Confirmation Required
         <IconButton onClick={onClose} sx={{ position: "absolute", right: 0, pt: 0 }}>

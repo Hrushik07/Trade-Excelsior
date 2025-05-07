@@ -70,7 +70,7 @@ function Onboarding() {
         setItems(items.map((item) => (item.id === editItem.id ? { ...item, ...values } : item)));
       } else {
         const newItem = { id: items.length + 1, ...values };
-        setItems([...items, newItem].map((item, index) => ({ ...item, id: index + 1 }))); // Re-index after adding
+        setItems([...items, newItem].map((item, index) => ({ ...item, id: index + 1 }))); 
       }
       setOpenDrawer(false);
     },
@@ -132,7 +132,7 @@ function Onboarding() {
             sx={{
               fontSize: { xs: "0.7rem", sm: "1rem" },
               mt: { xs: 1, sm: 0 },
-              width: { xs: "100%", sm: "auto" }, // Full width on mobile
+              width: { xs: "100%", sm: "auto" }, 
             }}
           >
             + Add Checklist

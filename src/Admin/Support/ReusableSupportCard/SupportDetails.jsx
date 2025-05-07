@@ -52,7 +52,6 @@ function SupportDetails({ ticket, onClose, updateTicketStatus }) {
             gap: isSmallMobile ? 1.5 : 2,
           }}
         >
-          {/* Avatar with Red Dot for Unresolved Status */}
           {ticket.status === "unresolved" ? (
             <Badge
               color="error"
@@ -102,7 +101,6 @@ function SupportDetails({ ticket, onClose, updateTicketStatus }) {
           </Box>
         </Box>
 
-        {/* Details */}
         <Box sx={{ mt: 2, px: isSmallMobile ? 0.5 : isMobile ? 1 : 0 }}>
           <Typography
             variant="body1"
@@ -128,7 +126,6 @@ function SupportDetails({ ticket, onClose, updateTicketStatus }) {
           </Typography>
         </Box>
 
-        {/* Checkbox and Back Button */}
         <Box
           sx={{
             display: "flex",

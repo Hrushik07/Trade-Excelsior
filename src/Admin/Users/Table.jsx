@@ -39,7 +39,6 @@ const UserTable = ({
       }}
     >
       {isMobile ? (
-        // Mobile View: Stacked Layout
         <Box>
           {users
             .filter((user) => {
@@ -96,7 +95,6 @@ const UserTable = ({
             ))}
         </Box>
       ) : (
-        // Desktop View: Table Layout
         <TableContainer>
           <Table size="medium" sx={{ minWidth: 650 }}>
             <TableHead>

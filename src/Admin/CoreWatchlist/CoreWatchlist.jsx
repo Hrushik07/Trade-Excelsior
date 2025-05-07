@@ -17,10 +17,9 @@ import { Add, Search, Edit } from "@mui/icons-material";
 import CustomModal from "../CommonComponents/CustomModal";
 import AddCoreWatchList from "../Dashboard/forms/AddCoreWatchList";
 import EditTrendDialog from "./EditTrend";
-import watchlistData from "./WatchlistData"; // Import the data
+import watchlistData from "./WatchlistData"; 
 import "./CoreWatchlist.css";
 
-// Constants
 const TREND_COLORS = { strong: "green", medium: "blue", weak: "red" };
 const MONTHS = Array.from({ length: 24 }, (_, index) => {
   const date = new Date();
@@ -28,7 +27,6 @@ const MONTHS = Array.from({ length: 24 }, (_, index) => {
   return date.toLocaleString("default", { month: "short", year: "numeric" });
 });
 
-// Highlight Text Function
 const highlightText = (text, highlight) => {
   if (!highlight.trim()) return text;
 
@@ -44,7 +42,6 @@ const highlightText = (text, highlight) => {
   );
 };
 
-// Core Watchlist Table Component
 const CoreWatchlistTable = () => {
   const [data, setData] = useState({ nodes: [] });
   const [openUser, setOpenUser] = useState(false);
@@ -129,7 +126,6 @@ const CoreWatchlistTable = () => {
     },
   ]);
 
-  // Use the imported data
   useEffect(() => {
     setData({ nodes: watchlistData });
   }, []);
@@ -208,11 +204,10 @@ const CoreWatchlistTable = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "center", // Center content horizontally
+              justifyContent: "center", 
               gap: 1,
             }}
           >
-            {/* Trend Indicator */}
             {trend ? (
               <Box
                 sx={{
@@ -223,9 +218,8 @@ const CoreWatchlistTable = () => {
                 }}
               />
             ) : (
-              <Typography variant="body2">_</Typography> // Placeholder for empty trends
+              <Typography variant="body2">_</Typography> 
             )}
-            {/* Edit Pencil (only for the most recent month) */}
             {month === MONTHS[0] && (
               <Box
                 sx={{
@@ -234,7 +228,7 @@ const CoreWatchlistTable = () => {
                 }}
                 onClick={() => handleOpenEditModal(item, month)}
               >
-                <Edit fontSize="small" /> {/* No additional color styling */}
+                <Edit fontSize="small" /> 
               </Box>
             )}
           </Box>
@@ -342,7 +336,6 @@ const CoreWatchlistTable = () => {
         }
         month={editableTrend.month}
         handleEditTrend={handleEditTrend}
-        // initialTrend={editableTrend.initialTrend}
       />
       <Box
         sx={{
@@ -418,7 +411,7 @@ const CoreWatchlistTable = () => {
         sx={{
           width: "100%",
           overflowX: "auto",
-          height: "calc(10 * 50px)", // Adjusted to display 10 rows
+          height: "calc(10 * 50px)", 
           overflowY: "auto",
         }}
       >

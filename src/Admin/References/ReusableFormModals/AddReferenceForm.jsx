@@ -127,7 +127,6 @@ const AddReferenceForm = ({ open, onClose, handleAdd }) => {
                   pr: { xs: 2, sm: 5 },
                 }}
               >
-                {/* File Upload Input */}
                 <input
                   type="file"
                   ref={fileInputRef}

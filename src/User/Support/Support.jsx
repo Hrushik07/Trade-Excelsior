@@ -11,7 +11,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import React from "react";
 
-// Validation Schema using Yup
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string()
@@ -26,7 +25,6 @@ function Support() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
-  // Formik setup
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -42,7 +40,6 @@ function Support() {
 
   return (
     <Box sx={{ backgroundColor: "white", padding: isMobile ? "10px" : "15px", minHeight: "84vh" }}>
-      {/* Centered "How Can I Help?" Box */}
       <Box
         sx={{
           display: "flex",
@@ -66,7 +63,6 @@ function Support() {
         </Typography>
       </Box>
 
-      {/* Main Content */}
       <Grid
         container
         spacing={isMobile ? 1 : 4} 
@@ -79,7 +75,6 @@ function Support() {
           alignItems: "center",
         }}
       >
-        {/* Image - Left on Desktop, Top on Mobile/Tablet */}
         <Grid
           item
           xs={12}
@@ -105,7 +100,6 @@ function Support() {
           />
         </Grid>
 
-        {/* Form - Right on Desktop, Below on Mobile/Tablet */}
         <Grid item xs={12} md={6}>
           <Box
             sx={{
@@ -118,7 +112,6 @@ function Support() {
               justifyContent: "center", 
             }}
           >
-            {/* Formik Form */}
             <form onSubmit={formik.handleSubmit}>
               {["name", "email", "contact", "message"].map((field) => (
                 <TextField
