@@ -65,8 +65,8 @@ function SuccessStory() {
 
   const handleEdit = (id) => {
     const storyToEdit = stories.find((story) => story.id === id);
-    setSelectedStory(storyToEdit); // Set the story to edit
-    setOpenForm(true); // Open the form
+    setSelectedStory(storyToEdit); 
+    setOpenForm(true); 
   };
 
   const handleDeleteClick = (id) => {
@@ -106,7 +106,7 @@ function SuccessStory() {
 
   return (
     <Box
-      sx={{ backgroundColor: "#C4D9FF", padding: "15px", minHeight: "100vh" }}
+      sx={{ backgroundColor: "#E6E6FF", padding: "15px", minHeight: "100vh" }}
     >
       <AppBar position="static" sx={{ backgroundColor: "white" }}>
         <Toolbar
@@ -156,14 +156,14 @@ function SuccessStory() {
               fontSize: isExtraSmall
                 ? "0.7rem"
                 : isMobile || isTablet
-                  ? "0.8rem"
-                  : "1rem",
+                ? "0.8rem"
+                : "1rem",
               whiteSpace: "nowrap",
               padding: isExtraSmall
                 ? "4px 8px"
                 : isMobile || isTablet
-                  ? "6px 12px"
-                  : "8px 16px",
+                ? "6px 12px"
+                : "8px 16px",
               mt: { xs: 1, sm: 0 },
             }}
           >
@@ -231,8 +231,8 @@ function SuccessStory() {
                       fontSize: isExtraSmall
                         ? "0.9rem"
                         : isMobile || isTablet
-                          ? "1rem"
-                          : "28px",
+                        ? "1rem"
+                        : "28px",
                     }}
                   >
                     {story.tagline}
@@ -245,8 +245,8 @@ function SuccessStory() {
                       fontSize: isExtraSmall
                         ? "0.9rem"
                         : isMobile || isTablet
-                          ? "1rem"
-                          : "28px",
+                        ? "1rem"
+                        : "28px",
                     }}
                   >
                     {story.name}
@@ -260,8 +260,8 @@ function SuccessStory() {
                       fontSize: isExtraSmall
                         ? "10px"
                         : isMobile || isTablet
-                          ? "12px"
-                          : "20px",
+                        ? "12px"
+                        : "20px",
                     }}
                   >
                     {expandedId === story.id
@@ -276,8 +276,8 @@ function SuccessStory() {
                         fontSize: isExtraSmall
                           ? "0.7rem"
                           : isMobile || isTablet
-                            ? "0.8rem"
-                            : "1rem",
+                          ? "0.8rem"
+                          : "1rem",
                         color: "#3A86FF",
                         fontWeight: "bold",
                       }}
@@ -289,13 +289,13 @@ function SuccessStory() {
                   <Box
                     sx={{
                       display: "flex",
-                      flexDirection: isMobile || isTablet ? "column" : "row", 
+                      flexDirection: isMobile || isTablet ? "column" : "row",
                       justifyContent:
-                        isMobile || isTablet ? "center" : "flex-start", 
+                        isMobile || isTablet ? "center" : "flex-start",
                       alignItems:
-                        isMobile || isTablet ? "center" : "flex-start", 
+                        isMobile || isTablet ? "center" : "flex-start",
                       mt: isExtraSmall ? 0.8 : isMobile || isTablet ? 1 : 2,
-                      gap: isExtraSmall ? "4px" : "8px", 
+                      gap: isExtraSmall ? "4px" : "8px",
                     }}
                   >
                     <Button
@@ -306,24 +306,24 @@ function SuccessStory() {
                         width: isExtraSmall
                           ? "auto"
                           : isMobile || isTablet
-                            ? "auto"
-                            : "100px",
+                          ? "auto"
+                          : "100px",
                         minWidth: isExtraSmall
                           ? "70px"
                           : isMobile || isTablet
-                            ? "80px"
-                            : "100px",
+                          ? "80px"
+                          : "100px",
                         fontSize: isExtraSmall
                           ? "0.7rem"
                           : isMobile || isTablet
-                            ? "0.8rem"
-                            : "1rem",
+                          ? "0.8rem"
+                          : "1rem",
                         whiteSpace: "nowrap",
                         padding: isExtraSmall
                           ? "4px 8px"
                           : isMobile || isTablet
-                            ? "6px 12px"
-                            : "8px 16px",
+                          ? "6px 12px"
+                          : "8px 16px",
                       }}
                       onClick={() => window.open(story.video, "_blank")}
                     >
@@ -337,28 +337,28 @@ function SuccessStory() {
                         width: isExtraSmall
                           ? "auto"
                           : isMobile || isTablet
-                            ? "auto"
-                            : "100px",
+                          ? "auto"
+                          : "100px",
                         minWidth: isExtraSmall
                           ? "70px"
                           : isMobile || isTablet
-                            ? "80px"
-                            : "100px",
+                          ? "80px"
+                          : "100px",
                         fontSize: isExtraSmall
                           ? "0.7rem"
                           : isMobile || isTablet
-                            ? "0.8rem"
-                            : "1rem",
+                          ? "0.8rem"
+                          : "1rem",
                         whiteSpace: "nowrap",
                         padding: isExtraSmall
                           ? "4px 8px"
                           : isMobile || isTablet
-                            ? "6px 12px"
-                            : "8px 16px",
+                          ? "6px 12px"
+                          : "8px 16px",
                         backgroundColor: "primary.main",
-                        color: "white", 
+                        color: "white",
                         "&:hover": {
-                          backgroundColor: "primary.dark", 
+                          backgroundColor: "primary.dark",
                         },
                       }}
                       onClick={() => handleEdit(story.id)}
@@ -372,31 +372,31 @@ function SuccessStory() {
                         width: isExtraSmall
                           ? "auto"
                           : isMobile || isTablet
-                            ? "auto"
-                            : "100px",
+                          ? "auto"
+                          : "100px",
                         minWidth: isExtraSmall
                           ? "70px"
                           : isMobile || isTablet
-                            ? "80px"
-                            : "100px",
+                          ? "80px"
+                          : "100px",
                         fontSize: isExtraSmall
                           ? "0.7rem"
                           : isMobile || isTablet
-                            ? "0.8rem"
-                            : "1rem",
+                          ? "0.8rem"
+                          : "1rem",
                         whiteSpace: "nowrap",
                         padding: isExtraSmall
                           ? "4px 8px"
                           : isMobile || isTablet
-                            ? "6px 12px"
-                            : "8px 16px",
+                          ? "6px 12px"
+                          : "8px 16px",
                         backgroundColor: "grey",
-                        color: "white", 
+                        color: "white",
                         "&:hover": {
                           backgroundColor: "darkgrey",
                         },
                       }}
-                      onClick={() => handleDeleteClick(story.id)} 
+                      onClick={() => handleDeleteClick(story.id)}
                     >
                       Delete
                     </Button>

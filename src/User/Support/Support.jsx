@@ -35,6 +35,7 @@ function Support() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2)); 
+      formik.resetForm();
     },
   });
 
@@ -152,7 +153,6 @@ function Support() {
                       },
                     },
                   }}
-                  multiline={field === "message"}
                   rows={field === "message" ? 3 : 1} 
                 />
               ))}

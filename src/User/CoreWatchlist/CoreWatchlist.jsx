@@ -171,7 +171,6 @@ const trendColors = { strong: "green", medium: "blue", weak: "red" };
 
 const CoreWatchlistTable = () => {
   const [data, setData] = useState({ nodes: [] });
-  const [openUser, setOpenUser] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const isMobile = useMediaQuery("(max-width: 600px)"); 
 

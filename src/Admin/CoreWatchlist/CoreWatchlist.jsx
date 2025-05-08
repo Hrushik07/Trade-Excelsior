@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
   useMediaQuery,
-  Avatar,
+  Badge,
 } from "@mui/material";
 import { Add, Search, Edit } from "@mui/icons-material";
 import CustomModal from "../CommonComponents/CustomModal";
@@ -53,6 +53,7 @@ const CoreWatchlistTable = () => {
   });
   const [openEditModal, setOpenEditModal] = useState(false);
   const isMobile = useMediaQuery("(max-width: 600px)");
+  const isExtraSmall = useMediaQuery("(max-width:417px)");
 
   const theme = useTheme([
     getTheme(),
@@ -239,7 +240,7 @@ const CoreWatchlistTable = () => {
 
   return (
     <Box
-      sx={{ backgroundColor: "#C4D9FF", padding: "15px", minHeight: "84vh" }}
+      sx={{ backgroundColor: "#E6E6FF", padding: "15px", minHeight: "84vh" }}
     >
       <AppBar
         position="static"
@@ -262,17 +263,19 @@ const CoreWatchlistTable = () => {
             >
               CORE WATCHLIST
             </Typography>
-            <Avatar
+            <Badge
+              badgeContent={filteredData.nodes.length}
               sx={{
-                bgcolor: "e0e0e0",
-                color: "#4fc3f7",
-                width: 30,
-                height: 30,
-                fontSize: "0.875rem",
+                ml: 2,
+                "& .MuiBadge-badge": {
+                  height: isExtraSmall ? "1.2rem" : "1.8rem",
+                  width: isExtraSmall ? "1.2rem" : "1.8rem",
+                  backgroundColor: "#E6E6FA",
+                  color: "#007BFF",
+                  fontSize: isExtraSmall ? "0.6rem" : "0.8rem",
+                },
               }}
-            >
-              {filteredData.nodes.length}
-            </Avatar>
+            />
           </Box>
           <Box
             sx={{
@@ -411,7 +414,7 @@ const CoreWatchlistTable = () => {
         sx={{
           width: "100%",
           overflowX: "auto",
-          height: "calc(10 * 50px)", 
+          height: "calc(10 * 50px)",
           overflowY: "auto",
         }}
       >

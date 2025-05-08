@@ -9,7 +9,6 @@ import {
   Avatar,
   useTheme,
   useMediaQuery,
-  Divider,
 } from "@mui/material";
 
 function Onboarding() {
@@ -45,7 +44,7 @@ function Onboarding() {
 
   return (
     <Box
-      sx={{ backgroundColor: "#C4D9FF", padding: "15px", minHeight: "100vh" }}
+      sx={{ backgroundColor: "#E6E6FF", padding: "15px", minHeight: "100vh" }}
     >
       <AppBar
         position="static"
